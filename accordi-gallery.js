@@ -133,41 +133,36 @@ function createGallers() {
 
   var touchstart;
 
+  function oneFingerTouch(fn) {
+    return function () {
+      if (d3.event.touches.length !== 1) {
+        return;
+      }
+      d3.event.preventDefault();
+      fn.call(this)
+    }
+  }
+
   ctx
     .on('mousemove', mousemove)
     .on('mouseleave', mouseout)
     .on('touchend', function () {
-      console.log('end', d3.event.touches);
-
       var isQuickClick = Date.now() - touchstart < 500;
       var isNotMovedClick = touchstartPos === d3.mouse(this)[0]
 
       if (isQuickClick || isNotMovedClick) {
-        alert('click');
+       // alert('click');
       }
-
       mouseout()
     })
-    .on('touchmove', function () {
-      if (d3.event.touches.length === 1) {
+    .on('touchmove', oneFingerTouch(mousemove))
+    .on('touchstart', oneFingerTouch(function () {
+      inContext = false;
 
-        mousemove.call(this)
-      }
-    })
-    .on('touchstart', function () {
-      d3.event.preventDefault();
-
-
-      if (d3.event.touches.length === 1) {
-        inContext = false;
-
-        console.log(d3.event.touches)
-
-        mousemove.call(this);
-        touchstartPos = d3.mouse(this)[0];
-        touchstart = Date.now();
-      }
-    });
+      mousemove.call(this);
+      touchstartPos = d3.mouse(this)[0];
+      touchstart = Date.now();
+    }));
 
 
   function grow() {
