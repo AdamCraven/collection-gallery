@@ -44,7 +44,7 @@
 
   function createCollectionGallery() {
     var ctx = d3.select(this);
-    var liEl, aEl, dispEl;
+    var ulEl, liEl, aEl, dispEl;
     var data;
     var dataUnparsed = ctx.attr('collection-gallery-data');
     if (!dataUnparsed) {
@@ -109,7 +109,7 @@
         .on('touchend', function () {
           var isQuickClick = Date.now() - touchstartTime < 500;
           var isNotMovedClick = touchstartPos === d3.mouse(this)[0];
-
+          //TODO: Click and then move quickly. Detect is moved much from start pos
           if (isQuickClick || isNotMovedClick) {
             if (mouseIsOverIndex !== null) {
               window.location.href = data[mouseIsOverIndex].href;
@@ -163,7 +163,7 @@
     }
 
     function render() {
-      ctx.selectAll('ul li')
+      ulEl.selectAll('li')
         .style('left', function (d, i) {
           return x(i) + 'px';
         })
@@ -191,8 +191,8 @@
         width: width + 'px',
         position: 'relative',
       });
-
-      liEl = ctx.selectAll('ul li')
+      ulEl = ctx.append('ul');
+      liEl = ulEl.selectAll('li')
         .data(data)
         .enter()
         .append('li')
