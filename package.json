@@ -1,0 +1,25 @@
+{
+  "name": "collection-gallery",
+  "version": "0.9.0",
+  "description": "Gallery for displaying collections - such as a fashion collection.",
+  "main": "collection-gallery.js",
+  "devDependencies": {
+    "webpack": "^1.12.13"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdamCraven/collection-gallery.git"
+  },
+  "keywords": [
+    "d3"
+  ],
+  "author": "Adam Craven",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AdamCraven/collection-gallery/issues"
+  },
+  "homepage": "https://github.com/AdamCraven/collection-gallery#readme"
+}
