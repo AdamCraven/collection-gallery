@@ -20,4 +20,5 @@ Gallery for viewing a collection of images
     price: '£20,000',
     title: 'Blue Car'
   }]">
-</div>```
+</div>
+```

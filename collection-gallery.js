@@ -175,7 +175,7 @@
 
       dispEl
         .transition()
-        .duration(100)
+        .duration(50)
         .style('opacity', function (d, i) {
           if (i === mouseIsOverIndex) {
             return '1';
@@ -233,6 +233,7 @@
           padding: '5px 10px',
           position: 'absolute',
           top: 0,
+          margin:0,
           'font-weight': '300',
           '-webkit-font-smoothing': 'antialiased',
           '-moz-osx-font-smoothing': 'grayscale',

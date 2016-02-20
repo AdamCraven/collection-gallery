@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Collection Gallery example</title>
+    <style>
+    html, body {height:100%;}
+    body {
+        background: black; font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    </style>
+</head>
+<body>
+    <div collection-gallery collection-gallery-data='[{
+        "src": "./images/1.jpg",
+        "href": "//example.com",
+        "title": "Product title",
+        "price": "£78"
+    }, {
+        "src": "./images/2.jpg",
+        "href": "//example.com",
+        "title": "Product title",
+        "price": "£225"
+    }, {
+        "src": "./images/3.jpg",
+        "href": "//example.com",
+        "title": "Product title",
+        "price": "£225"
+    }, {
+        "src": "./images/4.jpg",
+        "href": "//example.com",
+        "title": "Product title",
+        "price": "£225"
+    },{
+        "src": "./images/5.jpg",
+        "href": "//example.com",
+        "title": "Product title",
+        "price": "£225"
+    },{
+        "src": "./images/6.jpg",
+        "href": "//example.com",
+        "title": "Product title",
+        "price": "£225"
+    },{
+        "src": "./images/7.jpg",
+        "href": "//example.com",
+        "title": "Product title",
+        "price": "£225"
+    }]' style="width: 600px; height:300px;">
+    </div>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="../collection-gallery.js"></script>
+</body>
+</html>
